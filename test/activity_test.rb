@@ -15,6 +15,16 @@ class ActivityTest < Minitest::Test
   def test_retrieve_name_of_activity
     assert_equal "Brunch", @activity.name
   end
+
+  def test_activity_has_no_participants_by_default
+    assert_equal 0, @activity.participants.count
+  end
+
+  def test_activity_an_add_participants
+    activity_new = Activity.new("Brunch")
+    activity_new.add_participant("Jim", 20)
+    assert_equal activity_new.participants["Jim"], 20
+  end
 end
 
 
