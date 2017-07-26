@@ -7,7 +7,14 @@ class Activity
     @participants = {}
   end
 
-  def add_participant(name, age)
-    @participants[name] = age
-  end 
+  def add_participant(name, cost)
+    @participants[name] = cost
+  end
+
+  def total_cost(total = 0)
+    @participants.each_value do |cost|
+      total += cost
+    end
+    total
+  end
 end
