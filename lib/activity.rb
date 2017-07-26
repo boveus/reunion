@@ -17,4 +17,8 @@ class Activity
     end
     total
   end
+
+  def split
+    total_cost / 2
+  end
 end
