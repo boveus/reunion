@@ -6,6 +6,7 @@ class Reunion
     @name = name
     @activities = []
     @participants = []
+    @total_owed = {}
   end
 
   def add_activity(activity)
@@ -18,6 +19,16 @@ class Reunion
     end
     total_cost
   end
+
+  def breakout
+    @activites.each do |activity|
+      @participants.each do |participant|
+
+      end
+    end
+
+  end
+
 
   def get_all_participants(all_participants = [])
     @activities.each do |activity|
