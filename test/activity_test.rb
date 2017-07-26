@@ -45,15 +45,13 @@ class ActivityTest < Minitest::Test
     assert_equal 30, activity_new.split
   end
 
+  def test_activity_owed
+    activity_new = Activity.new("Brunch")
+    activity_new.add_participant("Jim", 20)
+    activity_new.add_participant("Joe", 40)
+    owed_hash = {"Jim" => 10, "Joe" => -10}
 
-  #
-  # > activity.split
-  # # => 30
-  #
-  # > activity.owed
-  # # => {"Jim" => 10, "Joe" => -10}
+    assert_equal owed_hash, activity_new.owed
 
-
-
-
+  end
 end
