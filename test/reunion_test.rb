@@ -60,7 +60,6 @@ class ReunionTest < Minitest::Test
   end
 
   def test_reunion_breakout
-    skip
     activity_1 = Activity.new("Brunch")
     activity_1.add_participant("Jim", 20)
     activity_1.add_participant("Joe", 40)

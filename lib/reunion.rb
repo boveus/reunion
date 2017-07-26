@@ -5,7 +5,7 @@ class Reunion
   def initialize(name)
     @name = name
     @activities = []
-    @participants = {}
+    @participants = []
   end
 
   def add_activity(activity)
@@ -25,6 +25,6 @@ class Reunion
         all_participants << participant
       end
     end
-    all_participants.uniq
+    @participants = all_participants.uniq
   end
 end
