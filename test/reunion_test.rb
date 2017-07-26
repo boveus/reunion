@@ -15,19 +15,14 @@ class ReunionTest < Minitest::Test
   def test_reunion_name
     assert_equal "Denver", @reunion.name
   end
+
+  def test_reunion_activities_start_empty
+    assert_equal 0, @reunion.activities.count
+  end
 end
 
 
 
-# > require './lib/reunion'
-# # => true
-#
-# > reunion = Reunion.new("Denver")
-# # => #<Reunion:0x007fe4ca1defc8 ...>
-#
-# > reunion.name
-# # => "Denver"
-#
 # > reunion.activities
 # # => []
 #
