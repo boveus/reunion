@@ -11,6 +11,10 @@ class ReunionTest < Minitest::Test
   def test_it_exists
     assert_instance_of Reunion, @reunion
   end
+
+  def test_reunion_name
+    assert_equal "Denver", @reunion.name
+  end
 end
 
 

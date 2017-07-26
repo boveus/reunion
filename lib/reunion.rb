@@ -1,6 +1,6 @@
 class Reunion
-  attr_reader :location
-  def initialize(location)
-    @location = location
+  attr_reader :name
+  def initialize(name)
+    @name = name
   end
 end
