@@ -54,4 +54,14 @@ class ActivityTest < Minitest::Test
     assert_equal owed_hash, activity_new.owed
 
   end
+
+  def test_activity_get_all_participants
+    activity_new = Activity.new("Brunch")
+    activity_new.add_participant("Jim", 20)
+    activity_new.add_participant("Joe", 40)
+    activity_new.add_participant("John", 10)
+
+    assert_equal 3, activity_new.get_all_participants.count
+  end
+
 end

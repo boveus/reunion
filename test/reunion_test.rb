@@ -44,16 +44,39 @@ class ReunionTest < Minitest::Test
     @reunion.add_activity(activity_2)
     assert_equal 200, @reunion.total_cost
   end
+
+  def test_return_all_participants
+    activity_1 = Activity.new("Brunch")
+    activity_1.add_participant("Jim", 20)
+    activity_1.add_participant("Joe", 40)
+    activity_2 = Activity.new("Drinks")
+    activity_2.add_participant("Jim", 60)
+    activity_2.add_participant("John", 80)
+    @reunion.add_activity(activity_1)
+    @reunion.add_activity(activity_2)
+
+    assert_equal 3, @reunion.get_all_participants.count
+
+  end
+
+  def test_reunion_breakout
+    skip
+    activity_1 = Activity.new("Brunch")
+    activity_1.add_participant("Jim", 20)
+    activity_1.add_participant("Joe", 40)
+    @reunion.add_activity(activity_1)
+    activity_2 = Activity.new("Drinks")
+    activity_2.add_participant("Jim", 60)
+    activity_2.add_participant("John", 80)
+    @reunion.add_activity(activity_2)
+    breakout_hash = {"Jim"=> 20, "Joe"=> -10, "John"=> -10}
+
+
+    assert_equal breakout_hash, @reunion.breakout
+  end
 end
 
-#
-# > activity_2 = Activity.new("Drinks")
-# > activity_2.add_participant("Jim", 60)
-# > activity_2.add_participant("John", 80)
-# > reunion.add_activity(activity_2)
-# > reunion.total_cost
-# # => 200
-#
+
 # > reunion.breakout
 # # => {"Jim"=> 20, "Joe"=> -10, "John"=> -10}
 #

@@ -29,4 +29,11 @@ class Activity
       @participants[name] = split_value - cost
     end
   end
+
+  def get_all_participants(all_participants = [])
+    @participants.each_key do |participant|
+      all_participants << participant
+    end
+    all_participants
+  end
 end
